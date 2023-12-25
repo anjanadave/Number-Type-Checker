@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Type Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="main">
+        <h1>Number Type Checker</h1>
+        <label for="enter" class="enter">Enter a number:</label><br>
+        <input type="number" class="name" id="inputNumber"><br>
+        <button type="button" onclick="checkNumberType()">Check Number Type</button>
+        <p id="result"></p>
+     </div>
+
+     <script>
+        function checkNumberType() {
+            var inputElement = document.getElementById('inputNumber').value;
+            var resultElement = document.getElementById('result');
+
+                var isFloat = inputElement.includes('.');
+                var isInteger = Number.isInteger(parseFloat(inputElement));
+
+                if (isFloat) {
+                    resultElement.textContent = inputElement + ` is a float.`;
+                } else if(isInteger) {
+                    resultElement.textContent = inputElement + ` is a integer.`;
+                }
+            }
+            
+        
+     </script>
+</body>
+</html>
